@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      <% if(locals.title) { %>
+        <%= title %>
+      <% } else { %>
+        The Concentrated Reef
+      <% } %>
+    </title>
+    <link rel="stylesheet" media="screen" href="css/placss.css" />
+    <link rel="stylesheet" media="screen" href="css/main.css" />
+    <script src="js/dependency_factory.js"></script>
+    <script src="js/placss.js"></script>
+    <script>
+      installDeps();
+    </script>
+  </head>
+  <body>
+    <wrapper>
+      <header>
+        <h1>The Concentrated Reef</h1>
+        <nav>
+          <flex justify="space-around">
+            <a><img src="logo.jpg" alt="TCR Logo" /></a>
+            <a>Flowers</a>
+            <a>Concentrates</a>
+            <a>Syrups</a>
+            <spacer w="1/4"></spacer>
+            <a>Sign-up</a>
+            <a>Login</a>
+          </flex>
+        </nav>
+      </header>
+      <main>

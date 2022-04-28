@@ -1,0 +1,12 @@
+<%- include('./wrappers/head'); %>
+<section>
+  <h1>ERROR!</h1>
+  <h3>
+    <% if(locals.msg) { %>
+      <%= msg %>
+    <% } else { %>
+      Page not found!
+    <% } %>
+  </h3>
+</section>
+<%- include('./wrappers/foot'); %>

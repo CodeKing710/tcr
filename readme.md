@@ -7,3 +7,7 @@ NOTE: If you are using this to view the source and want to run the server, pleas
 ### Routes
 | Action | Route | Description |
 | --- | --- | --- |
+| / | GET | Homepage |
+| /signup | GET | Show sign up page |
+| /login | GET | Show login page |
+| / | POST | Handle sign-up and login |
