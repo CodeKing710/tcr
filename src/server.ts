@@ -11,8 +11,6 @@ dotenv.config();
 //App and app constants (some shared)
 const app = express();
 const PORT = process.env.PORT ?? 3000;
-const session = {};
-exports.session = session;
 
 //Express Middleware
 app.set('views', './views');
@@ -29,6 +27,8 @@ app.use(sessions({
 app.use(cookieParser());
 
 //Routes
+import {auth} from './routes/auth';
+app.use(auth);
 
 //Catch any unresolved 404 errors
 app.get('*', (req: Request, res: Response) => {
