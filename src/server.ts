@@ -26,6 +26,13 @@ app.use(sessions({
 }));
 app.use(cookieParser());
 
+//Adjust Express Request and Response interfaces to include sessions and render
+declare module "express-serve-static-core" {
+  interface Request {
+    user_id?: string;
+  }
+}
+
 //Routes
 import {auth} from './routes/auth';
 app.use(auth);
