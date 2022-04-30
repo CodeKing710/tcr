@@ -1,6 +1,7 @@
 //Imports
 import express, {Request, Response} from 'express';
 import ejs from 'ejs';
+import path from 'path';
 import sessions from 'express-session';
 import cookieParser from 'cookie-parser';
 import 'dotenv/config';
@@ -12,7 +13,7 @@ const PORT = process.env.PORT ?? 3000;
 //Express Middleware
 app.set('views', './views');
 app.set('view engine','ejs');
-app.use(express.static('./public', {}));
+app.use('/',express.static('./public', {}));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(sessions({
@@ -24,8 +25,8 @@ app.use(sessions({
 app.use(cookieParser());
 
 //Adjust Express Request and Response interfaces to include sessions and render
-declare module "express-serve-static-core" {
-  interface Request {
+declare module "express-session" {
+  interface Session {
     user_id?: string;
   }
 }

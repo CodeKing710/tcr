@@ -4,3 +4,4 @@ build
 *.lock
 src/seeders
 packge-lock.json
+.vscode

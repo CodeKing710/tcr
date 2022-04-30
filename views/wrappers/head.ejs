@@ -31,10 +31,21 @@
             <a href="/syrup">Syrups</a>
             <spacer w="1/4"></spacer>
             <% if(locals.login) { %>
-              <% if(login) { %>
-                <a>Cart</a>
-                <a>Checkout</a>
+              <% if(locals.login !== 'guest') { %>
+                <%
+                  let cart = `/cart/${locals.login}`;
+                  let checkout = `/checkout/${locals.login}`;
+                %>
+                <a href="<%= cart %>">Cart</a>
+                <a href="<%= checkout %>">Checkout</a>
+                <a href="/logout">Logout</a>
               <% } else { %>
+                <%
+                  let cart = `/cart/guest`;
+                  let checkout = `/checkout/guest`;
+                %>
+                <a href="<%= cart %>">Cart</a>
+                <a href="<%= checkout %>">Checkout</a>
                 <a href="/signup">Sign-up</a>
                 <a href="/login">Login</a>
               <% } %>
