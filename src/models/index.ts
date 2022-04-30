@@ -1,15 +1,20 @@
-import mongoose, {connect} from 'mongoose';
+import mongoose from 'mongoose';
 import _User from './user';
 import _Flower from './flower';
 import _Concentrate from './concentrate';
 import _Syrup from './syrup';
 import _Cart from './cart';
-import dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 
 const MDB = process.env.MDB || "mongodb://";
 
-connect(MDB);
+declare module 'mongoose' {
+  interface ConnectOptions {
+    useNewUrlParser?: boolean
+  }
+}
+
+mongoose.connect(`${MDB}`, {useNewUrlParser: true});
 
 export const User = mongoose.model('User',_User);
 export const Flower = mongoose.model('Flower', _Flower);

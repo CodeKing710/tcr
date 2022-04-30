@@ -1,12 +1,9 @@
 //Imports
 import express, {Request, Response} from 'express';
 import ejs from 'ejs';
-import dotenv from 'dotenv';
-import path from 'path';
 import sessions from 'express-session';
 import cookieParser from 'cookie-parser';
-//Configure environment variables
-dotenv.config();
+import 'dotenv/config';
 
 //App and app constants (some shared)
 const app = express();
