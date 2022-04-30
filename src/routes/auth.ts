@@ -2,17 +2,17 @@ import {Request, Response, Router} from 'express';
 import bcrypt from 'bcrypt';
 import {User} from '../models';
 
-const router = Router();
+const auth = Router();
 
-router.get('/signup', (req: Request, res: Response) => {
+auth.get('/signup', (req: Request, res: Response) => {
   res.render('user/signup');
 });
 
-router.get('/login', (req: Request, res: Response) => {
+auth.get('/login', (req: Request, res: Response) => {
   res.render('user/login');
 });
 
-router.post('/', async (req: Request, res: Response) => {
+auth.post('/', async (req: Request, res: Response) => {
   if(req.body?.login) {
     try {
       const user = await User.findOne({username: req.body?.username});
@@ -32,4 +32,4 @@ router.post('/', async (req: Request, res: Response) => {
   res.redirect('/');
 });
 
-export {router as auth};
+export default auth;

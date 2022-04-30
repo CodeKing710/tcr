@@ -1,5 +1,10 @@
 <%- include('../wrappers/head', {title: 'Login'}); %>
 <section>
-
+  <form method="POST" action="/">
+    <input type="text" name="username" id="username" placeholder="Username or email..." />
+    <input type="password" name="password" id="password" placeholder="Password..." />
+    <input type="checkbox" name="login" checked style="display:none;" />
+    <input type="submit" value="Login" />
+  </form>
 </section>
 <%- include('../wrappers/foot'); %>
