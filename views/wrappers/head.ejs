@@ -25,13 +25,23 @@
         <h1>The Concentrated Reef</h1>
         <nav>
           <flex justify="space-around">
-            <a><img src="logo.jpg" alt="TCR Logo" /></a>
-            <a>Flowers</a>
-            <a>Concentrates</a>
-            <a>Syrups</a>
+            <a href="/"><img src="logo.jpg" alt="TCR Logo" /></a>
+            <a href="/flower">Flowers</a>
+            <a href="/concentrate">Concentrates</a>
+            <a href="/syrup">Syrups</a>
             <spacer w="1/4"></spacer>
-            <a>Sign-up</a>
-            <a>Login</a>
+            <% if(locals.login) { %>
+              <% if(login) { %>
+                <a>Cart</a>
+                <a>Checkout</a>
+              <% } else { %>
+                <a href="/signup">Sign-up</a>
+                <a href="/login">Login</a>
+              <% } %>
+            <% } else { %>
+              <a href="/signup">Sign-up</a>
+              <a href="/login">Login</a>
+            <% } %>
           </flex>
         </nav>
       </header>

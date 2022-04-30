@@ -31,10 +31,16 @@ declare module "express-serve-static-core" {
 }
 
 //Routes
-import auth from './routes/auth';
-import main from './routes/main';
-app.use(auth);
-app.use(main);
+import * as _routes from './routes';
+interface routes {
+  [index: string | number]: any;
+}
+
+const routes: routes = _routes;
+
+for(const route in routes) {
+  app.use(routes[route].url, routes[route].scheme);
+}
 
 //Catch any unresolved 404 errors
 app.get('*', (req: Request, res: Response) => {
