@@ -44,7 +44,7 @@ for(const route in routes) {
 }
 
 //Catch any unresolved 404 errors
-app.get('*', (req: Request, res: Response) => {
+app.get('/*', (req: Request, res: Response) => {
   res.render('404');
 });
 
