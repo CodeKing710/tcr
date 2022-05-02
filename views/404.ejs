@@ -1,4 +1,8 @@
-<%- include('./wrappers/head'); %>
+<% if(locals.title) { %>
+  <%- include('./wrappers/head', {title: title}); %>
+<% } else { %>
+  <%- include('./wrappers/head', {title: "Error 404"}); %>
+<% } %>
 <section>
   <h1>ERROR!</h1>
   <h3>

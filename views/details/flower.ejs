@@ -1,4 +1,8 @@
-<%- include('../wrappers/head', {title: 'Flowers'}); %>
+<% if(locals.scheme) { %>
+  <%- include('../wrappers/head', {title: scheme.name}); %>
+<% } else { %>
+  <%- include('../wrappers/head', {title: 'Flower not Found'}); %>
+<% } %>
 <section>
 
 </section>
