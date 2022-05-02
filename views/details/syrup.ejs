@@ -1,0 +1,21 @@
+<% if(locals.scheme) { %>
+  <%- include('../wrappers/head', {title: scheme.name}); %>
+<% } else { %>
+  <%- include('../wrappers/head', {title: 'Syrup not Found'}); %>
+<% } %>
+<section>
+  <center>
+    <h1><%= scheme.name %></h1>
+    <img src="<%= scheme.img %>" alt="Picture of <%= scheme.name %>" />
+    <p><%= scheme.aroma %></p>
+    <p>
+      <% if(scheme.desc) { %>
+        <%= scheme.desc %>
+      <% } else { %>
+        Description not provided... Maybe you could provide one!<br>
+        <a href="/syrup/<%= scheme.name %>/edit?desc_only=true">Edit Description</a>
+      <% } %>
+    </p>
+  </center>
+</section>
+<%- include('../wrappers/foot'); %>

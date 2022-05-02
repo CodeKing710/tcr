@@ -4,6 +4,18 @@
   <%- include('../wrappers/head', {title: 'Flower not Found'}); %>
 <% } %>
 <section>
-
+  <center>
+    <h1><%= scheme.name %></h1>
+    <img src="<%= scheme.img %>" alt="Picture of <%= scheme.name %>" />
+    <p><%= scheme.aroma %></p>
+    <p>
+      <% if(scheme.desc) { %>
+        <%= scheme.desc %>
+      <% } else { %>
+        Description not provided... Maybe you could provide one!<br>
+        <a href="/flower/<%= scheme.name %>/edit">Edit Description</a>
+      <% } %>
+    </p>
+  </center>
 </section>
 <%- include('../wrappers/foot'); %>

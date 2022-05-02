@@ -10,4 +10,4 @@ export const _auth = {url: '/', scheme: auth};
 export const _main = {url: '/', scheme: main};
 export const _syrup = {url: '/syrup', scheme: syrup};
 export const _flower = {url: '/flower', scheme: flower};
-export const _concentrate = {url: '/concentrate', scheme: concentrate};
+export const _concentrate = {url: '/cct', scheme: concentrate};
