@@ -6,6 +6,7 @@ import sessions from 'express-session';
 import cookieParser from 'cookie-parser';
 import { sessionCheck } from './utils/session';
 import * as _routes from './routes';
+import methodoverride from 'method-override';
 import 'dotenv/config';
 
 //App and app constants (some shared)
@@ -26,6 +27,7 @@ app.use(sessions({
 }));
 app.use(cookieParser());
 app.use(sessionCheck);
+app.use(methodoverride('__m'));
 
 //Adjust Express Request and Response interfaces to include sessions and render
 declare module "express-session" {

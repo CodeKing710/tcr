@@ -8,6 +8,7 @@
           <img src="<%= flower.img %>" alt="Picture of <%= flower.name %>" />
           <p><strong>Aromas: </strong><%= flower.aroma %></p>
           <p><%= flower.desc %></p>
+          <a href="javascript:addtoCart('<%= flower.name %>');">Add to Cart</a>
         </div>
       </a>
     <% }); %>

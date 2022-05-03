@@ -13,9 +13,10 @@
         <%= scheme.desc %>
       <% } else { %>
         Description not provided... Maybe you could provide one!<br>
-        <a href="/flower/<%= scheme.name %>/edit">Edit Description</a>
+        <a href="/flower/<%= scheme.name %>/edit/">Edit Description</a>
       <% } %>
     </p>
+    <a href="javascript:addtoCart('<%= scheme.name %>');">Add to Cart</a>
   </center>
 </section>
 <%- include('../wrappers/foot'); %>
