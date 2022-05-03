@@ -1,0 +1,16 @@
+<%- include('./wrappers/head', {title: 'Syrups', login: id}); %>
+<section>
+  <flex justify="space-around" wrap>
+    <% syrups.forEach(syrup => { %>
+      <a href="/syrup/<%= syrup.name %>">
+        <div class="card">
+          <h3><%= syrup.name %></h3>
+          <img src="<%= syrup.img %>" alt="Picture of <%= syrup.name %>" />
+          <p><strong>Aromas: </strong><%= syrup.aroma %></p>
+          <p><%= syrup.desc %></p>
+        </div>
+      </a>
+    <% }); %>
+  </flex>
+</section>
+<%- include('./wrappers/foot'); %>

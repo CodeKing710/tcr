@@ -21,9 +21,11 @@ auth.post('/', async (req: Request, res: Response) => {
     try {
       const user = await User.findOne({username: req.body?.username});
       console.log(user);
-      if(bcrypt.compareSync(req.body?.password, user?.password ?? "")) {
+      if(await bcrypt.compare(req.body?.password, user?.password ?? "")) {
+        console.log("Correct Password");
         req.session.user_id = user?.username;
       } else {
+        console.log("Incorrect password");
         req.session.user_id = 'guest';
       }
     } catch (e) {

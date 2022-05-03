@@ -4,7 +4,12 @@ import {Flower} from '../models';
 const flower = Router();
 
 flower.get('/', async (req: Request, res: Response) => {
-  res.render('flowers');
+  try {
+    const first50 = await Flower.find().limit(50);
+    res.render('flowers', {id: req.session.user_id, flowers: first50});
+  } catch (e) {
+    res.render('404', {msg: "Database Error: Unable to connect"});
+  }
 });
 
 flower.get('/:name', async (req: Request, res: Response) => {
@@ -12,7 +17,7 @@ flower.get('/:name', async (req: Request, res: Response) => {
   try {
     const flowerPull = await Flower.findOne({name: name});
     if(flowerPull !== null) {
-      res.render('details/flower', {scheme: flowerPull});
+      res.render('details/flower', {id: req.session.user_id, scheme: flowerPull});
     } else {
       res.render('404', {title:"Flower not Found", msg: "Flower not Found!"});
     }

@@ -1,7 +1,7 @@
 <% if(locals.scheme) { %>
-  <%- include('../wrappers/head', {title: scheme.name}); %>
+  <%- include('../wrappers/head', {title: scheme.name, login: id}); %>
 <% } else { %>
-  <%- include('../wrappers/head', {title: 'Flower not Found'}); %>
+  <%- include('../wrappers/head', {title: 'Flower not Found', login: id}); %>
 <% } %>
 <section>
   <center>
