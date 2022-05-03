@@ -8,7 +8,7 @@ cct.get('/', async (req: Request, res: Response) => {
     const first50 = await Concentrate.find().limit(50);
     res.render('concentrates', {id: req.session.user_id, ccts: first50});
   } catch (e) {
-    res.render('404', {msg: "Database Error: Unable to connect"});
+    res.render('404', {msg: "Database Error: Unable to connect", id: req.session.user_id});
   }
 });
 
@@ -19,10 +19,10 @@ cct.get('/:name', async (req: Request, res: Response) => {
     if(cctPull !== null) {
       res.render('details/concentrate', {id: req.session.user_id, scheme: cctPull});
     } else {
-      res.render('404', {title:"Concentrate not Found", msg: "Concentrate not Found!"});
+      res.render('404', {title:"Concentrate not Found", msg: "Concentrate not Found!", id: req.session.user_id});
     }
   } catch (e) {
-    res.render('404', {msg: e});
+    res.render('404', {msg: e, id: req.session.user_id});
   }
 });
 

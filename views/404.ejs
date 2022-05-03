@@ -1,7 +1,7 @@
 <% if(locals.title) { %>
-  <%- include('./wrappers/head', {title: title}); %>
+  <%- include('./wrappers/head', {title: title, login: id}); %>
 <% } else { %>
-  <%- include('./wrappers/head', {title: "Error 404"}); %>
+  <%- include('./wrappers/head', {title: "Error 404", login: id}); %>
 <% } %>
 <section>
   <h1>ERROR!</h1>

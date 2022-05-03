@@ -5,12 +5,13 @@ import {User} from '../models';
 const auth = Router();
 
 auth.get('/signup', (req: Request, res: Response) => {
-  res.render('user/signup');
+  res.render('user/signup', {id: req.session.user_id});
 });
 
 auth.get('/login', (req: Request, res: Response) => {
-  res.render('user/login');
+  res.render('user/login', {id: req.session.user_id});
 });
+
 auth.get('/logout', (req: Request, res: Response) => {
   req.session.user_id = 'guest';
   res.redirect('/');

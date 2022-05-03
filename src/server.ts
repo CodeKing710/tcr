@@ -4,6 +4,8 @@ import ejs from 'ejs';
 import path from 'path';
 import sessions from 'express-session';
 import cookieParser from 'cookie-parser';
+import { sessionCheck } from './utils/session';
+import * as _routes from './routes';
 import 'dotenv/config';
 
 //App and app constants (some shared)
@@ -23,6 +25,7 @@ app.use(sessions({
   resave: false
 }));
 app.use(cookieParser());
+app.use(sessionCheck);
 
 //Adjust Express Request and Response interfaces to include sessions and render
 declare module "express-session" {
@@ -32,7 +35,6 @@ declare module "express-session" {
 }
 
 //Routes
-import * as _routes from './routes';
 interface routes {
   [index: string | number]: any;
 }
@@ -45,7 +47,7 @@ for(const route in routes) {
 
 //Catch any unresolved 404 errors
 app.get('/*', (req: Request, res: Response) => {
-  res.render('404');
+  res.render('404', {id: req.session.user_id});
 });
 
 app.listen(PORT, ()=>{console.log("Actively Accepting requests...")});
