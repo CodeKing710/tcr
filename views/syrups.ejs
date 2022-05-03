@@ -2,7 +2,7 @@
 <section>
   <flex justify="space-around" wrap>
     <% syrups.forEach(syrup => { %>
-      <a href="/syrup/<%= syrup.name %>">
+      <a href="/syrup/<%= syrup.name %>/">
         <div class="card">
           <h3><%= syrup.name %></h3>
           <img src="<%= syrup.img %>" alt="Picture of <%= syrup.name %>" />

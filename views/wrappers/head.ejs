@@ -15,6 +15,7 @@
     <link rel="stylesheet" media="screen" href="/css/main.css" />
     <script src="/js/dependency_factory.js"></script>
     <script src="/js/placss.js"></script>
+    <script src="/js/breadcrumbs.js"></script>
     <script>
       installDeps();
     </script>
@@ -26,23 +27,23 @@
         <nav>
           <flex justify="space-around">
             <a href="/"><img src="logo.jpg" alt="TCR Logo" /></a>
-            <a href="/flower">Flowers</a>
-            <a href="/cct">Concentrates</a>
-            <a href="/syrup">Syrups</a>
-            <spacer w="1/4"></spacer>
+            <a href="/flower/">Flowers</a>
+            <a href="/cct/">Concentrates</a>
+            <a href="/syrup/">Syrups</a>
+            <spacer w="1/6"></spacer>
             <% if(locals.login) { %>
               <% if(locals.login !== 'guest') { %>
                 <%
-                  let cart = `/cart/${locals.login}`;
-                  let checkout = `/checkout/${locals.login}`;
+                  let cart = `/cart/${locals.login}/`;
+                  let checkout = `/checkout/${locals.login}/`;
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>
                 <a href="/logout">Logout</a>
               <% } else { %>
                 <%
-                  let cart = `/cart/guest`;
-                  let checkout = `/checkout/guest`;
+                  let cart = `/cart/guest/`;
+                  let checkout = `/checkout/guest/`;
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>

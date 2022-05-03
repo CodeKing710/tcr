@@ -195,7 +195,7 @@ function fixNavs() {
 
         let nav = document.querySelectorAll('nav.submenus')[0];
         let headerHeight = document.querySelectorAll('header')[0].offsetHeight;
-        if(nav !== null) {
+        if(nav !== undefined) {
             nav.style.top = `${headerHeight}px`;
             document.querySelectorAll('main')[0].style.paddingTop = `${headerHeight}px`;
         }

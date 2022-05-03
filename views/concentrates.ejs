@@ -2,7 +2,7 @@
 <section>
   <flex justify="space-around" wrap>
     <% ccts.forEach(cct => { %>
-      <a href="/cct/<%= cct.name %>">
+      <a href="/cct/<%= cct.name %>/">
         <div class="card">
           <h3><%= cct.name %></h3>
           <img src="<%= cct.img %>" alt="Picture of <%= cct.name %>" />
