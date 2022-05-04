@@ -1,5 +1,6 @@
 //Only caches cart data locally
-sessionStorage.setItem('cart', []);
+if(!sessionStorage.getItem('cart'))
+  sessionStorage.setItem('cart', []);
 
 function addtoCart(...items) {
   const temp = sessionStorage.getItem('cart').split(",");
@@ -10,5 +11,5 @@ function addtoCart(...items) {
   for(const item of items) {
     temp.push(item);
   }
-  sessionStorage.setItem('cart', temp);
+  sessionStorage.setItem('cart', temp.sort());
 }

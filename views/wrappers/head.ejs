@@ -13,6 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" media="screen" href="/css/placss.css" />
     <link rel="stylesheet" media="screen" href="/css/main.css" />
+    <% if(locals.login) { %>
+      <script>
+        var sessionName = "<%= login %>";
+      </script>
+    <% } %>
     <script src="/js/dependency_factory.js"></script>
     <script src="/js/placss.js"></script>
     <script src="/js/breadcrumbs.js"></script>
@@ -39,7 +44,7 @@
               <% if(locals.login !== 'guest') { %>
                 <%
                   let cart = `/cart/${locals.login}/`;
-                  let checkout = `/checkout/${locals.login}/`;
+                  let checkout = `/cart/${locals.login}/checkout/`;
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>
@@ -47,7 +52,7 @@
               <% } else { %>
                 <%
                   let cart = `/cart/guest/`;
-                  let checkout = `/checkout/guest/`;
+                  let checkout = `/cart/guest/checkout`;
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>

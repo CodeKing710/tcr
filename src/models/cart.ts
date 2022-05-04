@@ -1,13 +1,13 @@
 import mongoose, {Schema} from 'mongoose';
 
-interface Cart {
+export interface ICart {
   owner: string,
-  items?: mongoose.Types.ObjectId[]
+  items?: mongoose.Types.Map<Schema>[]
 }
 
-const _Cart = new Schema<Cart>({
+const _Cart = new Schema<ICart>({
   owner: {type: String, required: true},
-  items: [{type: mongoose.Schema.Types.ObjectId, ref: 'Item'}]
+  items: [{type: Map, of: new Schema({name:String,quantity:Number,price:Number})}]
 });
 
 export default _Cart;

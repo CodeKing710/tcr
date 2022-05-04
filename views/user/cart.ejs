@@ -1,0 +1,34 @@
+<%- include('../wrappers/head', {title: 'Cart', login: id}); %>
+<section>
+  <h1><%= id %>'s Cart</h1>
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+    <% cart.forEach(item => { %>
+      <tr class="<%= item.get('name'); %>">
+        <td><%= item.get('name') %></td>
+        <td><%= item.get('quantity') %></td>
+        <td>$<%= item.get('price') %></td>
+        <td><a href="javascript:remove('<%= item.get('name'); %>');">Remove</a></td>
+      </tr>
+    <% }); %>
+    <tr>
+      <td>Total: </td>
+      <td>
+        <% let totalQty = 0; cart.forEach(item => {totalQty+=item.get('quantity');}); %>
+        <%= totalQty %>
+      </td>
+      <td>
+        <% let total = 0; cart.forEach(item => {total+=item.get('price');}); %>
+        $<%= total %>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+  <a href="/cart/<%= id %>/checkout">Checkout</a>
+</section>
+<%- include('../wrappers/foot'); %>
