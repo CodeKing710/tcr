@@ -10,7 +10,8 @@
     "dev": "nodemon src/server.ts",
     "test": "jest",
     "seed": "node build/seeders/seed.js",
-    "unseed": "node build/seeders/clear.js"
+    "unseed": "node build/seeders/clear.js",
+    "deploy": "npx tsc && bash zip-build.sh && eb deploy"
   },
   "repository": {
     "type": "git",
