@@ -102,3 +102,11 @@ input[type="text"], input[type="password"], input[type="email"] {
 .form-input {
   margin: 5px 0;
 }
+
+/* Nav stuff */
+#desktopNav {
+  display: block;
+}
+#mobileNav, #mobilePopup {
+  display: none;
+}

@@ -22,6 +22,7 @@
     <script src="/js/dependency_factory.js"></script>
     <script src="/js/placss.js"></script>
     <script src="/js/breadcrumbs.js"></script>
+    <script src="/js/mobileNav.js"></script>
     <script src="/js/cart/add.js"></script>
     <script src="/js/cart/remove.js"></script>
     <script src="/js/cart/checkout.js"></script>
@@ -34,7 +35,7 @@
     <wrapper>
       <header>
         <h1>The Concentrated Reef</h1>
-        <nav>
+        <nav id="desktopNav">
           <flex justify="space-around">
             <a href="/"><img src="logo.jpg" alt="TCR Logo" /></a>
             <a href="/flower/">Flowers</a>
@@ -66,5 +67,45 @@
             <% } %>
           </flex>
         </nav>
+        <nav id="mobileNav">
+          <a href="javascript:openMobileNav();" id="bars-link">
+            <flex column justify="space-around" id="bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </flex>
+          </a>
+        </nav>
+        <flex column justify="space-around" v-align="center" id="mobilePopup">
+          <a href="javascript:closeMobileNav();">X</a>
+          <a href="/"><img src="logo.jpg" alt="TCR Logo" /></a>
+          <a href="/flower/">Flowers</a>
+          <a href="/cct/">Concentrates</a>
+          <a href="/syrup/">Syrups</a>
+          <spacer h="1/1"></spacer>
+          <% if(locals.login) { %>
+            <% if(locals.login !== 'guest') { %>
+              <%
+                let cart = `/cart/${locals.login}/`;
+                let checkout = `/cart/${locals.login}/checkout/`;
+              %>
+              <a href="<%= cart %>">Cart</a>
+              <a href="<%= checkout %>">Checkout</a>
+              <a href="/logout/">Logout</a>
+            <% } else { %>
+              <%
+                let cart = `/cart/guest/`;
+                let checkout = `/cart/guest/checkout`;
+              %>
+              <a href="<%= cart %>">Cart</a>
+              <a href="<%= checkout %>">Checkout</a>
+              <a href="/signup/">Sign-up</a>
+              <a href="/login/">Login</a>
+            <% } %>
+          <% } else { %>
+            <a href="/signup/">Sign-up</a>
+            <a href="/login/">Login</a>
+          <% } %>
+        </flex>
       </header>
       <main>
