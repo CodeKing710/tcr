@@ -1,6 +1,6 @@
 import mongoose, {Schema} from 'mongoose';
 
-interface Item {
+export interface Item {
   name: string,
   quantity: number,
   price: number

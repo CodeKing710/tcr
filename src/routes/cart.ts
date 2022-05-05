@@ -1,7 +1,8 @@
 import {Router, Request, Response} from 'express';
-import {Cart, Item} from '../models';
+import {Cart} from '../models';
 import getCart from '../utils/getCart';
 import type { ICart } from '../models/cart';
+import type { Item } from '../models/item';
 
 const cart = Router();
 
@@ -31,11 +32,23 @@ cart.post('/:user', async (req: Request, res: Response) => {
     }
   });
   //Filter parsedCart
-  for(let i = 0; i < parsedCart.length; i++) {
-    for(let j = i+1; j < parsedCart.length; j++) {
-      if(parsedCart[i] === parsedCart[j]) {
-        parsedCart[i].quantity+=1;
-        parsedCart.splice(j--,1);
+  if(parsedCart.length > 0) {
+    for(let i = 0; i <= parsedCart.length; i++) {
+      if(parsedCart[i+1] === undefined) {
+        if(parsedCart[i] !== undefined) {
+          if(parsedCart[i-1].name === parsedCart[i].name) {
+            parsedCart[i-1].quantity += parsedCart[i].quantity;
+            parsedCart[i-1].price = parsedCart[i].quantity * 3;
+            parsedCart.splice(i, 1);
+          }
+        }
+      } else {
+        if(parsedCart[i].name === parsedCart[i+1].name) {
+          parsedCart[i].quantity += parsedCart[i+1].quantity;
+          parsedCart[i].price = parsedCart[i].quantity * 3;
+          parsedCart.splice(i+1, 1);
+          --i;
+        }
       }
     }
   }
