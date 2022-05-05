@@ -8,6 +8,7 @@
           <img src="<%= syrup.img %>" alt="Picture of <%= syrup.name %>" />
           <p><strong>Aromas: </strong><%= syrup.aroma %></p>
           <p><%= syrup.desc %></p>
+          <a href="javascript:addtoCart('<%= syrup.name %>');">Add to Cart</a>
         </div>
       </a>
     <% }); %>

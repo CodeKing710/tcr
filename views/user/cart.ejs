@@ -1,7 +1,7 @@
 <%- include('../wrappers/head', {title: 'Cart', login: id}); %>
 <section>
   <h1><%= id %>'s Cart</h1>
-  <table>
+  <table id="cart">
     <tr>
       <th>Product Name</th>
       <th>Quantity</th>
@@ -18,11 +18,11 @@
     <% }); %>
     <tr>
       <td>Total: </td>
-      <td>
+      <td id="totalQty">
         <% let totalQty = 0; cart.forEach(item => {totalQty+=item.get('quantity');}); %>
         <%= totalQty %>
       </td>
-      <td>
+      <td id="totalPrice">
         <% let total = 0; cart.forEach(item => {total+=item.get('price');}); %>
         $<%= total %>
       </td>

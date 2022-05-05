@@ -11,3 +11,13 @@ NOTE: If you are using this to view the source and want to run the server, pleas
 | /signup | GET | Show sign up page |
 | /login | GET | Show login page |
 | / | POST | Handle sign-up and login |
+| /flower | GET | Show all flowers |
+| /flower/:name | GET | Show specific flower |
+| /concentrate | GET | Show all concentrates |
+| /concentrate/:name | GET | Show specific concentrate |
+| /syrup | GET | Show all syrups |
+| /syrup/:name | GET | Show specific syrup |
+| /cart | GET | Redirects to actual cart page |
+| /cart/:user | GET | Show users current cart |
+| /cart/:user | POST | Update users cart |
+| /cart/:user/checkout | GET | Checks out user |

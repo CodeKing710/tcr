@@ -29,6 +29,8 @@ cct.get('/:name', async (req: Request, res: Response) => {
 cct.get('/:name/edit', async (req: Request, res: Response) => {
   const name = req.params.name;
   const query = req.query;
+
+  res.send("In Progress");
 });
 
 export default cct;

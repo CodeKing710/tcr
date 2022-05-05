@@ -12,4 +12,5 @@ function addtoCart(...items) {
     temp.push(item);
   }
   sessionStorage.setItem('cart', temp.sort());
+  save();
 }

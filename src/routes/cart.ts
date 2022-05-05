@@ -35,7 +35,7 @@ cart.post('/:user', async (req: Request, res: Response) => {
     for(let j = i+1; j < parsedCart.length; j++) {
       if(parsedCart[i] === parsedCart[j]) {
         parsedCart[i].quantity+=1;
-        parsedCart.splice(j,1);
+        parsedCart.splice(j--,1);
       }
     }
   }

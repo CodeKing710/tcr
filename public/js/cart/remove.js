@@ -7,8 +7,17 @@ function remove(name) {
     }
   }
   sessionStorage.setItem('cart', cart);
+
   const items = document.getElementsByClassName(name);
+  const [totalQty, totalPrice] = [document.getElementById('totalQty'), document.getElementById('totalPrice')];
   for(const item of items) {
+    let qty = Number(item.children[1].textContent), price = Number(item.children[2].textContent.replace('$',''));
+    let tQty = Number(totalQty.textContent), tPrice = Number(totalPrice.textContent.replace('$',''));
+    tQty -= qty;
+    tPrice -= price;
+    totalQty.innerHTML = tQty;
+    totalPrice.innerHTML = `\$${tPrice}`;
     item.remove();
   }
+  save();
 }

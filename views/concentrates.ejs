@@ -8,6 +8,7 @@
           <img src="<%= cct.img %>" alt="Picture of <%= cct.name %>" />
           <p><strong>Aromas: </strong><%= cct.aroma %></p>
           <p><%= cct.desc %></p>
+          <a href="javascript:addtoCart('<%= cct.name %>');">Add to Cart</a>
         </div>
       </a>
     <% }); %>

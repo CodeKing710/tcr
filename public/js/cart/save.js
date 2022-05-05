@@ -17,5 +17,5 @@ async function save(e) {
 //Bind save options to multiple client exit routes
 window.onblur = save;
 window.onchange = save;
-// window.onunload = save;
+window.onunload = save;
 // window.onbeforeunload = save;
