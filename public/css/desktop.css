@@ -80,14 +80,25 @@ main {background: #ccc;}
 .card-link-container:hover .card {
   box-shadow: #666 2px 2px 2px;
 }
-.cart-btn, .cart-btn:visited {
+input[type="submit"], .cart-btn, .cart-btn:visited {
   display: inline-block;
   background: #00228f;
   color: #888;
   padding: 5px;
   border-radius: 10px;
+  border: none;
+  font-size: 1.2em;
 }
-.cart-btn:hover {
+input[type="submit"]:hover, .cart-btn:hover {
   background: #000066;
   color: #aaa;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  border: none;
+  padding: 2px;
+  border-radius: 7px;
+}
+.form-input {
+  margin: 5px 0;
 }
