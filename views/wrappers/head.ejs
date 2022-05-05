@@ -48,7 +48,7 @@
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>
-                <a href="/logout">Logout</a>
+                <a href="/logout/">Logout</a>
               <% } else { %>
                 <%
                   let cart = `/cart/guest/`;
@@ -56,12 +56,12 @@
                 %>
                 <a href="<%= cart %>">Cart</a>
                 <a href="<%= checkout %>">Checkout</a>
-                <a href="/signup">Sign-up</a>
-                <a href="/login">Login</a>
+                <a href="/signup/">Sign-up</a>
+                <a href="/login/">Login</a>
               <% } %>
             <% } else { %>
-              <a href="/signup">Sign-up</a>
-              <a href="/login">Login</a>
+              <a href="/signup/">Sign-up</a>
+              <a href="/login/">Login</a>
             <% } %>
           </flex>
         </nav>
