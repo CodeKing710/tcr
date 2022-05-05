@@ -1,14 +1,14 @@
 <%- include('./wrappers/head', {title: 'Concentrates', login: id}); %>
 <section>
-  <flex justify="space-around" wrap>
+  <flex justify="space-around" h-align="center" wrap class="card-container">
     <% ccts.forEach(cct => { %>
-      <a href="/cct/<%= cct.name %>/">
+      <a href="/cct/<%= cct.name %>/" class="card-link-container">
         <div class="card">
           <h3><%= cct.name %></h3>
           <img src="<%= cct.img %>" alt="Picture of <%= cct.name %>" />
           <p><strong>Aromas: </strong><%= cct.aroma %></p>
           <p><%= cct.desc %></p>
-          <a href="javascript:addtoCart('<%= cct.name %>');">Add to Cart</a>
+          <a href="javascript:addtoCart('<%= cct.name %>');" class="cart-btn">Add to Cart</a>
         </div>
       </a>
     <% }); %>

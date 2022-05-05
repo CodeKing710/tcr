@@ -1,6 +1,6 @@
 <%- include('../wrappers/head', {title: 'Cart', login: id}); %>
 <section>
-  <h1><%= id %>'s Cart</h1>
+  <h1>Shopping Cart</h1>
   <table id="cart">
     <tr>
       <th>Product Name</th>
@@ -13,7 +13,7 @@
         <td><%= item.get('name') %></td>
         <td><%= item.get('quantity') %></td>
         <td>$<%= item.get('price') %></td>
-        <td><a href="javascript:remove('<%= item.get('name'); %>');">Remove</a></td>
+        <td><a href="javascript:remove('<%= item.get('name'); %>');" class="remove">Remove</a></td>
       </tr>
     <% }); %>
     <tr>
@@ -29,6 +29,6 @@
       <td></td>
     </tr>
   </table>
-  <a href="/cart/<%= id %>/checkout">Checkout</a>
+  <a href="/cart/<%= id %>/checkout" class="checkout">Checkout</a>
 </section>
 <%- include('../wrappers/foot'); %>

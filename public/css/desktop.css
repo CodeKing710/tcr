@@ -1,0 +1,93 @@
+@media screen and (min-width: 1200px) {
+  wrapper {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+}
+* {transition: all 0.3s ease;}
+header, footer {background: #00aa00;}
+footer {height: 50px !important;}
+a {text-decoration: none;}
+
+/* Main stuff */
+header nav a, footer a {
+  display: block;
+  float: left;
+  padding: 2px 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+header nav {border-top: 2px solid black; background: #009900;}
+header nav a,
+header nav a:visited,
+footer a,
+footer a:visited {color: black;}
+header nav a:hover, footer a:hover {
+  color: #ccc;
+}
+main {background: #ccc;}
+
+/* Breadcrumbs stuff */
+.breadcrumbs {font-weight: bolder; overflow: hidden;}
+.breadcrumbs a, .breadcrumbs a:visited {
+  display: inline;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  color: black;
+}
+.breadcrumbs a:hover {color: white; background: black;}
+
+/* Cart stuff */
+.remove, .remove:visited {
+  display: inline-block;
+  background: #cc0022;
+  color: #aaa;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 6px;
+}
+.remove:hover {
+  background: #660011;
+}
+.checkout, .checkout:visited {
+  display: inline-block;
+  background: #0044cc;
+  color: #aaa;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 6px;
+  margin-top: 10px;
+}
+.checkout:hover {
+  background: #00228f;
+}
+
+/* Cards stuff */
+.card-container {
+  padding-top: 20px;
+}
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: #666 7px 7px 5px;
+  padding: 15px;
+  margin: 10px;
+}
+.card-link-container, .card-link-container:visited {
+  color: black;
+}
+.card-link-container:hover .card {
+  box-shadow: #666 2px 2px 2px;
+}
+.cart-btn, .cart-btn:visited {
+  display: inline-block;
+  background: #00228f;
+  color: #888;
+  padding: 5px;
+  border-radius: 10px;
+}
+.cart-btn:hover {
+  background: #000066;
+  color: #aaa;
+}

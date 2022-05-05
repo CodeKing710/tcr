@@ -35,7 +35,7 @@ cart.post('/:user', async (req: Request, res: Response) => {
   if(parsedCart.length > 0) {
     for(let i = 0; i <= parsedCart.length; i++) {
       if(parsedCart[i+1] === undefined) {
-        if(parsedCart[i] !== undefined) {
+        if(parsedCart[i] !== undefined && parsedCart[i-1] !== undefined) {
           if(parsedCart[i-1].name === parsedCart[i].name) {
             parsedCart[i-1].quantity += parsedCart[i].quantity;
             parsedCart[i-1].price = parsedCart[i].quantity * 3;
@@ -43,11 +43,13 @@ cart.post('/:user', async (req: Request, res: Response) => {
           }
         }
       } else {
-        if(parsedCart[i].name === parsedCart[i+1].name) {
-          parsedCart[i].quantity += parsedCart[i+1].quantity;
-          parsedCart[i].price = parsedCart[i].quantity * 3;
-          parsedCart.splice(i+1, 1);
-          --i;
+        if(parsedCart[i] !== undefined) {
+          if(parsedCart[i].name === parsedCart[i+1].name) {
+            parsedCart[i].quantity += parsedCart[i+1].quantity;
+            parsedCart[i].price = parsedCart[i].quantity * 3;
+            parsedCart.splice(i+1, 1);
+            --i;
+          }
         }
       }
     }

@@ -1,14 +1,14 @@
 <%- include('./wrappers/head', {title: 'Syrups', login: id}); %>
 <section>
-  <flex justify="space-around" wrap>
+  <flex justify="space-around" h-align="center" wrap class="card-container">
     <% syrups.forEach(syrup => { %>
-      <a href="/syrup/<%= syrup.name %>/">
+      <a href="/syrup/<%= syrup.name %>/" class="card-link-container">
         <div class="card">
           <h3><%= syrup.name %></h3>
           <img src="<%= syrup.img %>" alt="Picture of <%= syrup.name %>" />
           <p><strong>Aromas: </strong><%= syrup.aroma %></p>
           <p><%= syrup.desc %></p>
-          <a href="javascript:addtoCart('<%= syrup.name %>');">Add to Cart</a>
+          <a href="javascript:addtoCart('<%= syrup.name %>');" class="cart-btn">Add to Cart</a>
         </div>
       </a>
     <% }); %>

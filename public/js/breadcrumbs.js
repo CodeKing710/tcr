@@ -4,6 +4,7 @@ function breadcrumbs() {
     //Generate Breadcrumbs
     const container = document.querySelector('section');
     const bcContainer = document.createElement('div');
+    bcContainer.className = 'breadcrumbs';
     const paths = url.split('/');
     let bc = '/';
     bcContainer.innerHTML = `<a href="${bc}">Home</a>`;
