@@ -1,0 +1,1 @@
+powershell Compress-Archive -Force -LiteralPath ./public, ./build, ./views, ./package.json -DestinationPath ../tcr.zip
