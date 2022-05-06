@@ -12,11 +12,15 @@ cart.get('/', (req: Request, res: Response) => {
 
 cart.get('/:user', async (req: Request, res: Response) => {
   const user = req.params.user;
-  await getCart(user, async (cart: ICart) => {
-    res.render('user/cart', {user: user, id: req.session.user_id, cart: cart?.items});
-  }, (e: Error) => {
-    res.render('404', {id: req.session.user_id, msg: `User not found: ${e}`});
-  });
+  if(user !== req.session.user_id) {
+    res.render('404', {id: req.session.user_id, msg: "User not logged in!"});
+  } else {
+    await getCart(user, async (cart: ICart) => {
+      res.render('user/cart', {user: user, id: req.session.user_id, cart: cart?.items});
+    }, (e: Error) => {
+      res.render('404', {id: req.session.user_id, msg: `User not found: ${e}`});
+    });
+  }
 });
 
 //Non-rendering route
@@ -72,17 +76,25 @@ cart.post('/:user', async (req: Request, res: Response) => {
 
 cart.get('/:user/checkout', async (req: Request, res: Response) => {
   const user = req.params.user;
-  await getCart(user, (cart: ICart)=>{
-    res.render('user/checkout', {id: req.session.user_id, cart: cart});
-  });
+  if(user !== req.session.user_id) {
+    res.render('404', {id: req.session.user_id, msg: "User not logged in!"});
+  } else {
+    await getCart(user, (cart: ICart)=>{
+      res.render('user/checkout', {id: req.session.user_id, cart: cart});
+    });
+  }
 });
 
 //Non-rendering route
 cart.get('/:user/items', async (req: Request, res: Response) => {
   const user = req.params.user;
-  await getCart(user, (cart: ICart) => {
-    res.json({item: cart.items});
-  });
+  if(user !== req.session.user_id) {
+    res.json({items: ""});
+  } else {
+    await getCart(user, (cart: ICart) => {
+      res.json({items: cart.items});
+    });
+  }
 });
 
 export default cart;

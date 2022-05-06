@@ -3,8 +3,10 @@ async function load() {
     try {
       const userCart = await fetch(`${window.location.origin}/cart/${sessionName}/items`);
       const userJson = await userCart.json();
-      if(items.length >= 1 && items[0] !== "") {
+      if(userJson.items.length >= 1 && userJson.items[0] !== "") {
         sessionStorage.setItem('cart',userJson.items);
+      } else {
+        sessionStorage.setItem('cart', []);
       }
     } catch (e) {console.log(e);}
   }
