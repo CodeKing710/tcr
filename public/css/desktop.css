@@ -83,7 +83,7 @@ main {background: #ccc;}
 input[type="submit"], .cart-btn, .cart-btn:visited {
   display: inline-block;
   background: #00228f;
-  color: #888;
+  color: #ccc;
   padding: 5px;
   border-radius: 10px;
   border: none;

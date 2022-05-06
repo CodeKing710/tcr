@@ -1,9 +1,13 @@
 function openMobileNav() {
-  document.getElementById('mobilePopup').style.display = 'block';
+  const popup = document.getElementById('mobilePopup');
+  popup.style.display = 'block';
+  setTimeout(()=>{popup.style.opacity = 1;}, 10);
   document.getElementById('bars-link').href = 'javascript:closeMobileNav();';
 }
 function closeMobileNav() {
-  document.getElementById('mobilePopup').style.display = 'none';
+  const popup = document.getElementById('mobilePopup');
+  popup.style.opacity = 0;
+  setTimeout(()=>{popup.style.display = 'none';}, 300);
   document.getElementById('bars-link').href = 'javascript:openMobileNav();';
 }
 addDeps(true, () => {
