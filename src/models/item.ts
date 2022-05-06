@@ -1,4 +1,4 @@
-import mongoose, {Schema} from 'mongoose';
+// import mongoose, {Schema} from 'mongoose';
 
 export interface Item {
   name: string,
@@ -6,10 +6,10 @@ export interface Item {
   price: number
 }
 
-const _Item = new Schema<Item>({
-  name: {type: String, required: true},
-  quantity: {type: Number, required: true},
-  price: {type: Number, required: true}
-});
+// const _Item = new Schema<Item>({
+//   name: {type: String, required: true},
+//   quantity: {type: Number, required: true},
+//   price: {type: Number, required: true}
+// });
 
-export default _Item;
+// export default _Item;
