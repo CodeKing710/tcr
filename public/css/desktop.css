@@ -26,6 +26,16 @@ header nav a:hover, footer a:hover {
   color: #ccc;
 }
 main {background: #ccc;}
+table, th, td {border-collapse: collapse; border-radius: 50%;}
+th, td {
+  border: 2px solid black;
+  padding: 3px;
+}
+th {border-top: 1px solid black;}
+td:last-child, th:last-child {
+  border: none;
+}
+td:nth-last-child(2), td:nth-last-child(3) {text-align: center;}
 
 /* Breadcrumbs stuff */
 .breadcrumbs {font-weight: bolder; overflow: hidden;}
