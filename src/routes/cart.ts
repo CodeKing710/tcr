@@ -77,4 +77,12 @@ cart.get('/:user/checkout', async (req: Request, res: Response) => {
   });
 });
 
+//Non-rendering route
+cart.get('/:user/items', async (req: Request, res: Response) => {
+  const user = req.params.user;
+  await getCart(user, (cart: ICart) => {
+    res.json({item: cart.items});
+  });
+});
+
 export default cart;
