@@ -120,3 +120,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 #mobileNav, #mobilePopup {
   display: none;
 }
+
+@media screen and (max-width: 900px) {
+  html {font-size: 14px;}
+}
