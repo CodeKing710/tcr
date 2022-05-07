@@ -47,6 +47,8 @@ Checkout bugging ya? Not a problem, in our website that's a feature! No need for
 When my Dad was in college, he had built a DVD rental e-commerce page on a LAMP (Linux, Apache, MySQL, PHP) server. I enjoyed reading over his code and helping debug so much that I thought I'd take a crack at making an e-commerce site using tech that I only recently familiarized myself with. I decided to do a flower-based operation since that is one of my many hobbies, and flowers seemed like the best idea to transform into a retail website. The site needed something more than just flowers though, so as a step up I decided to incorporate the things I make from said flowers, and thats syrups and concentrates. Syrups are just viscous forms of the flowers we know and love. They are more potent in flavor and/or smell than their natural counterparts. Concentrates are just syrups reduced down even further into a solid, virtually no impurities exist in the material. That is what eventually finalized my plan for how to tackle the creation of this site.
 
 ### Current Bugstack
-- \[C-101\] - Checkout doesn't handle cards
-- \[M-0102\] (Patched) - Mobile text resize fails to resize until page refresh
-- \[D-0102\] (Patched) - Desktop text resize fails to reszie until page refresh
+#### Deciphering Bug ID
+##### C=Cart, F=Flower, CC=Concentrate, S=Syrup, SU=Sign-up, L=Login, D=Detail, M=Mobile, D=Desktop, FN=Function, SS=Styling
+- \[C-FN-101\] - Checkout doesn't handle cards
+- \[M-SS-0102\] (Patched) - Mobile text resize fails to resize until page refresh
+- \[D-SS-0102\] (Patched) - Desktop text resize fails to reszie until page refresh
