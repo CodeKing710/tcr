@@ -48,5 +48,5 @@ When my Dad was in college, he had built a DVD rental e-commerce page on a LAMP 
 
 ### Current Bugstack
 - \[C-101\] - Checkout doesn't handle cards
-- \[M-0102\] - Mobile text resize fails to resize until page refresh
-- \[D-0102\] - Desktop text resize fails to reszie until page refresh
+- \[M-0102\] (Patched) - Mobile text resize fails to resize until page refresh
+- \[D-0102\] (Patched) - Desktop text resize fails to reszie until page refresh
