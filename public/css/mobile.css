@@ -33,6 +33,7 @@
     opacity: 0;
     z-index: 1;
     background: #00aa00;
+    border-bottom-right-radius: 10px;
   }
   #mobilePopup a {
     display: block;
@@ -43,4 +44,5 @@
   }
   #mobilePopup a, #mobilePopup a:visited {color:black}
   #mobilePopup a:hover {color: #eee; background:#009900}
+  #mobilePopup a:last-child {border-bottom-right-radius: 10px;}
 }
