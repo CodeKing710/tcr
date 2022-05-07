@@ -122,5 +122,5 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 
 @media screen and (max-width: 900px) {
-  html {font-size: 14px;}
+  html {font-size: 12px;}
 }

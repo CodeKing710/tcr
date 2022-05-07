@@ -46,3 +46,11 @@
   #mobilePopup a:hover {color: #eee; background:#009900}
   #mobilePopup a:last-child {border-bottom-right-radius: 10px;}
 }
+@media screen and (max-width: 420px) {
+  header h1 {
+    font-size: 2em !important;
+  }
+  #mobileNav {height: 36px;}
+  .bar {margin: 3px 0;}
+  #mobilePopup {margin-top: 40px;}
+}
